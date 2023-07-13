@@ -1,0 +1,16 @@
+project\filteringfunctions.o: D:\KEIL\ARM\PACK\ARM\CMSIS\5.8.0\CMSIS\DSP\Source\FilteringFunctions\FilteringFunctions.c
+project\filteringfunctions.o: D:\KEIL\ARM\PACK\ARM\CMSIS\5.8.0\CMSIS\DSP\Source\FilteringFunctions\arm_biquad_cascade_df1_32x64_init_q31.c
+project\filteringfunctions.o: D:\KEIL\ARM\PACK\ARM\CMSIS\5.8.0\CMSIS\DSP\Include\dsp/filtering_functions.h
+project\filteringfunctions.o: D:\KEIL\ARM\PACK\ARM\CMSIS\5.8.0\CMSIS\DSP\Include\arm_math_types.h
+project\filteringfunctions.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+project\filteringfunctions.o: D:\KEIL\ARM\KEILV5\ARM\ARMCC\Bin\..\include\stdint.h
+project\filteringfunctions.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+project\filteringfunctions.o: D:\KEIL\ARM\KEILV5\ARM\ARMCC\Bin\..\include\string.h
+project\filteringfunctions.o: D:\KEIL\ARM\KEILV5\ARM\ARMCC\Bin\..\include\math.h
+project\filteringfunctions.o: D:\KEIL\ARM\KEILV5\ARM\ARMCC\Bin\..\include\float.h
+project\filteringfunctions.o: D:\KEIL\ARM\KEILV5\ARM\ARMCC\Bin\..\include\limits.h
+project\filteringfunctions.o: D:\KEIL\ARM\PACK\ARM\CMSIS\5.8.0\CMSIS\DSP\Include\arm_math_memory.h
+project\filteringfunctions.o: D:\KEIL\ARM\PACK\ARM\CMSIS\5.8.0\CMSIS\DSP\Include\dsp/none.h
+project\filteringfunctions.o: D:\KEIL\ARM\PACK\ARM\CMSIS\5.8.0\CMSIS\DSP\Include\dsp/utils.h
+project\filteringfunctions.o: D:\KEIL\ARM\PACK\ARM\CMSIS\5.8.0\CMSIS\DSP\Include\dsp/support_functions.h
+project\filteringfunctions.o: D:\KEIL\ARM\PACK\ARM\CMSIS\5.8.0\CMSIS\DSP\Include\dsp/fast_math_functions.h

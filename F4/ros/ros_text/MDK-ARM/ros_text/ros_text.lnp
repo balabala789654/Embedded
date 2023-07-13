@@ -1,0 +1,28 @@
+--cpu=Cortex-M4.fp.sp
+"ros_text\startup_stm32f407xx.o"
+"ros_text\main.o"
+"ros_text\gpio.o"
+"ros_text\usart.o"
+"ros_text\stm32f4xx_it.o"
+"ros_text\stm32f4xx_hal_msp.o"
+"ros_text\stm32f4xx_hal_tim.o"
+"ros_text\stm32f4xx_hal_tim_ex.o"
+"ros_text\stm32f4xx_hal_uart.o"
+"ros_text\stm32f4xx_hal_rcc.o"
+"ros_text\stm32f4xx_hal_rcc_ex.o"
+"ros_text\stm32f4xx_hal_flash.o"
+"ros_text\stm32f4xx_hal_flash_ex.o"
+"ros_text\stm32f4xx_hal_flash_ramfunc.o"
+"ros_text\stm32f4xx_hal_gpio.o"
+"ros_text\stm32f4xx_hal_dma_ex.o"
+"ros_text\stm32f4xx_hal_dma.o"
+"ros_text\stm32f4xx_hal_pwr.o"
+"ros_text\stm32f4xx_hal_pwr_ex.o"
+"ros_text\stm32f4xx_hal_cortex.o"
+"ros_text\stm32f4xx_hal.o"
+"ros_text\stm32f4xx_hal_exti.o"
+"ros_text\system_stm32f4xx.o"
+--strict --scatter "ros_text\ros_text.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "ros_text.map" -o ros_text\ros_text.axf
