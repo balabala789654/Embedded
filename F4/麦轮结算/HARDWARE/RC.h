@@ -15,11 +15,11 @@
 #define RC_FRAME_LENGTH 18u
 #define SBUS_RX_BUF_NUM 36u
 
-#define rc_DMAx_Streamx							DMA1_Stream1
+#define rc_DMAx_Streamx							DMA1_Stream5
 #define rc_DMA_Channel_x						DMA_Channel_4
-#define rc_USARTx										USART3
-#define rc_USARTx_IRQn							USART3_IRQn
-#define rc_GPIO_AF_USARTx  					GPIO_AF_USART3
+#define rc_USARTx										USART2
+#define rc_USARTx_IRQn							USART2_IRQn
+#define rc_GPIO_AF_USARTx  					GPIO_AF_USART2
 
 
 extern void RC_Init(uint8_t *rx1_buf, uint8_t *rx2_buf, uint16_t dma_buf_num);

@@ -13,12 +13,12 @@ void task1_task(void *pvParameters)
 	{
 		remote_contorl_speed(&rc_ctrl);
 		motor_speed_compute();
-		moter_send_3508(pid_control.M3508_PID[0].out,pid_control.M3508_PID[1].out,pid_control.M3508_PID[2].out,pid_control.M3508_PID[3].out);
+		moter_send_3508(pid_control.M3508_PID[3].out,pid_control.M3508_PID[2].out,pid_control.M3508_PID[0].out,pid_control.M3508_PID[1].out);
 		
 		vTaskDelay(1);
 	}
 }
-	
+
 ////////////电机期望速度计算////////////
 void remote_contorl_speed(RC_ctrl_t* RC)
 {
@@ -49,11 +49,11 @@ void remote_contorl_speed(RC_ctrl_t* RC)
 
 		else if(RC->rc.ch[2]!=0||RC->rc.ch[3]!=0)
 		{			
-			M3508_control.M3508[0].pid_set_speed=-vy+RC->rc.ch[0]*spin_speed/660;
-			M3508_control.M3508[2].pid_set_speed=vy+RC->rc.ch[0]*spin_speed/660;
+			M3508_control.M3508[0].pid_set_speed=vy+RC->rc.ch[0]*spin_speed/660;
+			M3508_control.M3508[2].pid_set_speed=-vy+RC->rc.ch[0]*spin_speed/660;
 			
-			M3508_control.M3508[1].pid_set_speed=vx+RC->rc.ch[0]*spin_speed/660;
-			M3508_control.M3508[3].pid_set_speed=-vx+RC->rc.ch[0]*spin_speed/660;
+			M3508_control.M3508[1].pid_set_speed=-vx+RC->rc.ch[0]*spin_speed/660;
+			M3508_control.M3508[3].pid_set_speed=vx+RC->rc.ch[0]*spin_speed/660;
 		}
 		else if(RC->rc.ch[0]!=0||RC->rc.ch[1]!=0)
 		{

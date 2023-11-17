@@ -36,7 +36,7 @@ int main()
 	PID_init(&pid_control.M3508_PID[2],PID_POSITION,7.0f,1.0f,0.0f,8000,200,200);
 	PID_init(&pid_control.M3508_PID[3],PID_POSITION,7.0f,1.0f,0.0f,8000,200,200);
 	uart_init(115200);
-	MPU_Init();
+	//MPU_Init();
 	//while(mpu_dmp_init());
 
 	
