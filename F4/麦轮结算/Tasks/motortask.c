@@ -14,7 +14,6 @@ void task1_task(void *pvParameters)
 		remote_contorl_speed(&rc_ctrl);
 		motor_speed_compute();
 		moter_send_3508(pid_control.M3508_PID[3].out,pid_control.M3508_PID[2].out,pid_control.M3508_PID[0].out,pid_control.M3508_PID[1].out);
-		
 		vTaskDelay(1);
 	}
 }
