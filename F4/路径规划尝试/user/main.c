@@ -44,16 +44,22 @@ int main()
 	//while(mpu_dmp_init());
 
 	
+	while(1){
 	
-	xTaskCreate((TaskFunction_t)start_task,			//任务函数
-				(const char*   )"start_task",		//名称
-				(uint16_t	   )START_STK_SIZE,		//堆栈
-				(void*         )NULL,				//传递参数
-				(UBaseType_t   )START_TASK_PRIO,	//优先级
-				(TaskHandle_t* )&StartTask_Handler);//句柄
-	vTaskStartScheduler();		//开启调度
+		remote_contorl_speed(&rc_ctrl);
+		motor_speed_compute();
+		moter_send_3508(pid_control.M3508_PID[1].out,pid_control.M3508_PID[0].out,pid_control.M3508_PID[2].out,pid_control.M3508_PID[3].out);
+		delay_us(500);
+	}
+//	xTaskCreate((TaskFunction_t)start_task,			//任务函数
+//				(const char*   )"start_task",		//名称
+//				(uint16_t	   )START_STK_SIZE,		//堆栈
+//				(void*         )NULL,				//传递参数
+//				(UBaseType_t   )START_TASK_PRIO,	//优先级
+//				(TaskHandle_t* )&StartTask_Handler);//句柄
+//	vTaskStartScheduler();		//开启调度
 
-	while(1);
+//	while(1);
 }
 
 
@@ -67,12 +73,12 @@ void start_task(void *pvParameters)
 				(UBaseType_t   )TASK1_TASK_PRIO,	//优先级
 				(TaskHandle_t* )&task1Task_Handler);//句柄
 
-	xTaskCreate((TaskFunction_t)interaction_task,			//任务函数
-				(const char*   )"interaction_task",		//名称
-				(uint16_t	   )INTERACTION_STK_SIZE,		//堆栈
-				(void*         )NULL,				//传递参数
-				(UBaseType_t   )INTERACTION_TASK_PRIO,	//优先级
-				(TaskHandle_t* )&interactionTask_Handler);//句柄
+//	xTaskCreate((TaskFunction_t)interaction_task,			//任务函数
+//				(const char*   )"interaction_task",		//名称
+//				(uint16_t	   )INTERACTION_STK_SIZE,		//堆栈
+//				(void*         )NULL,				//传递参数
+//				(UBaseType_t   )INTERACTION_TASK_PRIO,	//优先级
+//				(TaskHandle_t* )&interactionTask_Handler);//句柄
 
 //	xTaskCreate((TaskFunction_t)MPU_task,			//任务函数
 //				(const char*   )"MPU_task",		//名称
@@ -81,12 +87,12 @@ void start_task(void *pvParameters)
 //				(UBaseType_t   )MPU_TASK_PRIO,	//优先级
 //				(TaskHandle_t* )&MPUTask_Handler);//句柄
 	
-	xTaskCreate((TaskFunction_t)ros_control_task,			//任务函数
-				(const char*   )"ros_control_task",		//名称
-				(uint16_t	   )ROS_CONTROL_STK_SIZE,		//堆栈
-				(void*         )NULL,				//传递参数
-				(UBaseType_t   )ROS_CONTROL_TASK_PRIO,	//优先级
-				(TaskHandle_t* )&ros_controlTask_Handler);//句柄
+//	xTaskCreate((TaskFunction_t)ros_control_task,			//任务函数
+//				(const char*   )"ros_control_task",		//名称
+//				(uint16_t	   )ROS_CONTROL_STK_SIZE,		//堆栈
+//				(void*         )NULL,				//传递参数
+//				(UBaseType_t   )ROS_CONTROL_TASK_PRIO,	//优先级
+//				(TaskHandle_t* )&ros_controlTask_Handler);//句柄
 				
     vTaskDelete(StartTask_Handler); //删除开始任务
     taskEXIT_CRITICAL();            //退出临界区

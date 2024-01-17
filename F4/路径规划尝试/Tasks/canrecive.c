@@ -21,7 +21,7 @@ void moter_send_3508(int i1,int i2,int i3,int i4)
 	TxMessage.Data[6]=i4 >> 8;
 	TxMessage.Data[7]=i4; 
 	
-	CAN_Transmit(CAN2,&TxMessage);
+	CAN_Transmit(CAN1,&TxMessage);
 }
 
 void motor_send_6020(int i1,int i2,int i3,int i4)
@@ -42,7 +42,7 @@ void motor_send_6020(int i1,int i2,int i3,int i4)
 	TxMessage.Data[6]=i4 >> 8;
 	TxMessage.Data[7]=i4; 
 	
-	CAN_Transmit(CAN1,&TxMessage);
+	CAN_Transmit(CAN2,&TxMessage);
 
 }
 
@@ -52,8 +52,8 @@ void CAN1_RX0_IRQHandler(void)
 	CAN_Receive(CAN1,CAN_FIFO0,&Rx1Message);
 	switch(Rx1Message.StdId)
 	{
-		case 0x201: get_motor_measure(&M3508_control.M3508[0], Rx1Message);break;
-		case 0x202: get_motor_measure(&M3508_control.M3508[1], Rx1Message);break;
+		case 0x201: get_motor_measure(&M3508_control.M3508[1], Rx1Message);break;
+		case 0x202: get_motor_measure(&M3508_control.M3508[0], Rx1Message);break;
 		case 0x203: get_motor_measure(&M3508_control.M3508[2], Rx1Message);break;
 		case 0x204: get_motor_measure(&M3508_control.M3508[3], Rx1Message);break;
 		case 0x205: get_motor_measure(&GM6020_control.GM6020, Rx1Message);break;

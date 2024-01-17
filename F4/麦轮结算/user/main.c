@@ -63,19 +63,19 @@ void start_task(void *pvParameters)
 				(UBaseType_t   )TASK1_TASK_PRIO,	//优先级
 				(TaskHandle_t* )&task1Task_Handler);//句柄
 
-	xTaskCreate((TaskFunction_t)interaction_task,			//任务函数
-				(const char*   )"interaction_task",		//名称
-				(uint16_t	   )INTERACTION_STK_SIZE,		//堆栈
-				(void*         )NULL,				//传递参数
-				(UBaseType_t   )INTERACTION_TASK_PRIO,	//优先级
-				(TaskHandle_t* )&interactionTask_Handler);//句柄
+//	xTaskCreate((TaskFunction_t)interaction_task,			//任务函数
+//				(const char*   )"interaction_task",		//名称
+//				(uint16_t	   )INTERACTION_STK_SIZE,		//堆栈
+//				(void*         )NULL,				//传递参数
+//				(UBaseType_t   )INTERACTION_TASK_PRIO,	//优先级
+//				(TaskHandle_t* )&interactionTask_Handler);//句柄
 
-	xTaskCreate((TaskFunction_t)MPU_task,			//任务函数
-				(const char*   )"MPU_task",		//名称
-				(uint16_t	   )MPU_STK_SIZE,		//堆栈
-				(void*         )NULL,				//传递参数
-				(UBaseType_t   )MPU_TASK_PRIO,	//优先级
-				(TaskHandle_t* )&MPUTask_Handler);//句柄
+//	xTaskCreate((TaskFunction_t)MPU_task,			//任务函数
+//				(const char*   )"MPU_task",		//名称
+//				(uint16_t	   )MPU_STK_SIZE,		//堆栈
+//				(void*         )NULL,				//传递参数
+//				(UBaseType_t   )MPU_TASK_PRIO,	//优先级
+//				(TaskHandle_t* )&MPUTask_Handler);//句柄
 				
     vTaskDelete(StartTask_Handler); //删除开始任务
     taskEXIT_CRITICAL();            //退出临界区

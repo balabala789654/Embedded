@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Driver\CORE;..\Driver\FWLIB\inc;..\FreeRTOS\FreeRTOS_v2\FreeRTOSv202212.01\FreeRTOS\Source\include;..\FreeRTOS\FreeRTOS_v2\FreeRTOSv202212.01\FreeRTOS\Source\portable\RVDS\ARM_CM4F;..\HARDWARE\inc;..\USER\SYSTEM\inc</IncludePath>
+              <IncludePath>..\Driver\CORE;..\Driver\FWLIB\inc;..\FreeRTOS\FreeRTOS_v2\FreeRTOSv202212.01\FreeRTOS\Source\include;..\FreeRTOS\FreeRTOS_v2\FreeRTOSv202212.01\FreeRTOS\Source\portable\RVDS\ARM_CM4F;..\HARDWARE\inc;..\USER\SYSTEM\inc;..\USER\APP</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -602,6 +602,16 @@
               <FileName>sys.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\USER\SYSTEM\src\sys.c</FilePath>
+            </File>
+            <File>
+              <FileName>arm_4.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\APP\arm_4.c</FilePath>
+            </File>
+            <File>
+              <FileName>CyberGear.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\APP\CyberGear.c</FilePath>
             </File>
           </Files>
         </Group>
