@@ -1,5 +1,12 @@
 #include "arm_4.h"
 
+_arm arm;
+void joint_position_cal(float _x, float _y, float _z, float _angle){
+	arm.joint_position[0] = _x;
+	arm.joint_position[1] = _y;
+	arm.joint_position[2] = _z;
+}
+
 float alpha_cal(float _x, float _y, float _z){
 	float hypotenuse = sqrtf(_x*_x+_y*_y);
 	return atan2f(_z, hypotenuse);

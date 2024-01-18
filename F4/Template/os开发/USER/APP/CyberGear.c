@@ -226,33 +226,33 @@ void CyberGear_single_param_write(uint32_t _id){
 }
 
 
-void CAN1_RX0_IRQHandler(void)
-{
-	CanRxMsg Rx1Message;
-	CAN_Receive(CAN_num,CAN_FIFO0,&Rx1Message);
-	if(((Rx1Message.ExtId & 0xFF) == master_can_id) && ((Rx1Message.ExtId & 0x1f000000) >> 24) == 2){
-		
-		Rx1Message.ExtId = Rx1Message.ExtId & 0x00FFFF00;
-		
-		CyberGear.id = (Rx1Message.ExtId & 0xFF00) >> 8;
-		CyberGear.Undervoltage = (Rx1Message.ExtId & 0x10000) >> 16;
-		CyberGear.Overcurrent = (Rx1Message.ExtId & 0x20000) >> 17;
-		CyberGear.Overtemperature = (Rx1Message.ExtId & 0x30000) >> 18;
-		CyberGear.Encoder_error = (Rx1Message.ExtId & 0x40000) >> 19;
-		CyberGear.HALL_error = (Rx1Message.ExtId & 0x100000) >> 20;
-		CyberGear.mode = (Rx1Message.ExtId >> 22);
-		
-		CyberGear.cur_angle = (float)(((Rx1Message.Data[0] << 8) | Rx1Message.Data[1])^0x8000)/32768*4*pi;
-		CyberGear.cur_angle_acc = (float)(((Rx1Message.Data[2] << 8) | Rx1Message.Data[3])^0x8000)/32768*30.0f;
-		CyberGear.cur_torque = (float)(((Rx1Message.Data[4] << 8) | Rx1Message.Data[5])^0x8000)/32768*12.0f;
-		CyberGear.cur_temperature = (float)((Rx1Message.Data[6] << 8) | Rx1Message.Data[7])/10.0f;
-	}
-	else if(((Rx1Message.ExtId & 0xFF) == master_can_id) && ((Rx1Message.ExtId & 0x1f000000) >> 24) == 0){
-		Rx1Message.ExtId = Rx1Message.ExtId & 0x00FFFF00;
-		CyberGear.id = (Rx1Message.ExtId & 0xFF00) >> 8;
-	}
-	return;
-}
+//void CAN1_RX0_IRQHandler(void)
+//{
+//	CanRxMsg Rx1Message;
+//	CAN_Receive(CAN_num,CAN_FIFO0,&Rx1Message);
+//	if(((Rx1Message.ExtId & 0xFF) == master_can_id) && ((Rx1Message.ExtId & 0x1f000000) >> 24) == 2){
+//		
+//		Rx1Message.ExtId = Rx1Message.ExtId & 0x00FFFF00;
+//		
+//		CyberGear.id = (Rx1Message.ExtId & 0xFF00) >> 8;
+//		CyberGear.Undervoltage = (Rx1Message.ExtId & 0x10000) >> 16;
+//		CyberGear.Overcurrent = (Rx1Message.ExtId & 0x20000) >> 17;
+//		CyberGear.Overtemperature = (Rx1Message.ExtId & 0x30000) >> 18;
+//		CyberGear.Encoder_error = (Rx1Message.ExtId & 0x40000) >> 19;
+//		CyberGear.HALL_error = (Rx1Message.ExtId & 0x100000) >> 20;
+//		CyberGear.mode = (Rx1Message.ExtId >> 22);
+//		
+//		CyberGear.cur_angle = (float)(((Rx1Message.Data[0] << 8) | Rx1Message.Data[1])^0x8000)/32768*4*pi;
+//		CyberGear.cur_angle_acc = (float)(((Rx1Message.Data[2] << 8) | Rx1Message.Data[3])^0x8000)/32768*30.0f;
+//		CyberGear.cur_torque = (float)(((Rx1Message.Data[4] << 8) | Rx1Message.Data[5])^0x8000)/32768*12.0f;
+//		CyberGear.cur_temperature = (float)((Rx1Message.Data[6] << 8) | Rx1Message.Data[7])/10.0f;
+//	}
+//	else if(((Rx1Message.ExtId & 0xFF) == master_can_id) && ((Rx1Message.ExtId & 0x1f000000) >> 24) == 0){
+//		Rx1Message.ExtId = Rx1Message.ExtId & 0x00FFFF00;
+//		CyberGear.id = (Rx1Message.ExtId & 0xFF00) >> 8;
+//	}
+//	return;
+//}
 
 
 

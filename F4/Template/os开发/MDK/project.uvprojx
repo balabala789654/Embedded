@@ -613,6 +613,11 @@
               <FileType>1</FileType>
               <FilePath>..\USER\APP\CyberGear.c</FilePath>
             </File>
+            <File>
+              <FileName>CubeMars_AK80_8.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\APP\CubeMars_AK80_8.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
